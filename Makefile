@@ -1,8 +1,8 @@
 install:
-    python -m pip install -r requirements.txt
+	python -m pip install -U pip && python -m pip install -r requirements.txt
 
 lint:
-    pylint --disable=R,C .\main.py 
-    
+	pylint --disable=R,C main.py
+
 test:
-    pytest -vv
+	python -m pytest -vv --cov=main test_main.py
